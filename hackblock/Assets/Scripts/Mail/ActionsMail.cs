@@ -22,17 +22,6 @@ public class ActionsMail : MonoBehaviour
     [SerializeField] private GameObject inFromMain;
     [SerializeField] private GameObject inSubjectMain;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void ReturnClick()
     {
@@ -46,9 +35,11 @@ public class ActionsMail : MonoBehaviour
             {
 
                 mainPanel.SetActive(true);
-            inFromMain.GetComponent<TextMeshProUGUI>().text = "You have no mail";
-            inSubjectMain.GetComponent<TextMeshProUGUI>().text = "Take a rest and go outside";
-            eventPanel.SetActive(false);
+                inFromMain.GetComponent<TextMeshProUGUI>().text = "You have no mail";
+                inSubjectMain.GetComponent<TextMeshProUGUI>().text = "Take a rest and go outside";
+                returnBtn.GetComponentInChildren<TextMeshProUGUI>().text = "Return";
+
+                eventPanel.SetActive(false);
                 answerLink.SetActive(false);
                 answerAttachment.SetActive(false);
                 answerNormal.SetActive(false);
@@ -86,8 +77,11 @@ public class ActionsMail : MonoBehaviour
                     answerLink.SetActive(true);
                     break;
             }
+            PlayerLife player = PlayerLife.Instance;
+            player.looseLife();
 
-        }else
+        }
+        else
         {
             //the mail was not infected so the player made the right choice
             mainPanel.SetActive(true);
@@ -95,6 +89,8 @@ public class ActionsMail : MonoBehaviour
             returnBtn.SetActive(true);
             inFromMain.GetComponent<TextMeshProUGUI>().text = "You have no mail";
             inSubjectMain.GetComponent<TextMeshProUGUI>().text = "Take a rest and go outside";
+            returnBtn.GetComponentInChildren<TextMeshProUGUI>().text = "Return";
+
         }
 
     }

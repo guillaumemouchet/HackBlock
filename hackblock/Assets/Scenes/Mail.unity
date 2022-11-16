@@ -2330,11 +2330,11 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3824,12 +3824,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "L\u2019escroc \xE0 profit\xE9 de l\u2019urgence engendr\xE9e par ce mail
-    pour vous faire cliquer sur un lien frauduleux.\r\n\nIl a peut \xEAtre pris certain
-    de vos mots de passes ou informations bancaires.\r\n\nIl est important de ne
-    pas suivre n\u2019importe quel lien dans les mails de personnes qui ne sont pas
-    de confiance, essayez de faire attention \xE0 plus de d\xE9tail pour ne pas vous
-    faire avoir.\r\n\r\nPensez \xE0 consulter le lien suivant r\xE9guli\xE8rement
-    pour savoir si une de vos adresses mails \xE0 \xE9t\xE9 compromise.\r\n\r\n"
+    pour vous faire t\xE9l\xE9charger une pi\xE8ce jointe contennant un virus.\n\nIl
+    a peut \xEAtre pris certain de vos mots de passes ou informations bancaires.\r\n\nIl
+    est important de ne pas t\xE9l\xE9charger des pi\xE8ces jointes dans des mails
+    de personnes que l'on ne connait pas, m\xEAme nos amis peuvent se faire avoir
+    et nous envoyer des documents corrompu.\nEssayez de faire attention \xE0 plus
+    de d\xE9tail pour ne pas vous faire avoir.\r\n\r\nPensez \xE0 consulter le lien
+    suivant r\xE9guli\xE8rement pour savoir si une de vos adresses mails \xE0 \xE9t\xE9
+    compromise.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7267f5f07152f948bff43d6bb186b6a, type: 2}
   m_sharedMaterial: {fileID: 4090137588325300810, guid: b7267f5f07152f948bff43d6bb186b6a, type: 2}
@@ -3856,7 +3858,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.85
+  m_fontSize: 26.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4854,13 +4856,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "L\u2019escroc \xE0 profit\xE9 de l\u2019urgence engendr\xE9e par ce mail
-    pour vous faire cliquer sur un lien frauduleux.\r\n\nIl a peut \xEAtre pris certain
-    de vos mots de passes ou informations bancaires.\r\n\nIl est important de ne
-    pas suivre n\u2019importe quel lien dans les mails de personnes qui ne sont pas
-    de confiance, essayez de faire attention \xE0 plus de d\xE9tail pour ne pas vous
-    faire avoir.\r\n\r\nPensez \xE0 consulter le lien suivant r\xE9guli\xE8rement
-    pour savoir si une de vos adresses mails \xE0 \xE9t\xE9 compromise.\r\n\r\n"
+  m_text: "L\u2019escroc \xE0 profit\xE9 de sa fausse authorit\xE9 pour vous demander
+    de l'argent, ou un acc\xE8s \xE0 un de vos comptes.\r\n\nIl a acc\xE8s \xE0 vos
+    mots de passes,  informations bancaires and vous a prit de l'argent.\r\n\nIl
+    est important de ne pas envoyer de mots de passes ou d'informations personnels
+    en ligne et de privil\xE9gier le plus possible les consultats physiques. \n\nLes
+    diff\xE9rents points \xE0 retenirs sont :\n\r1. Les entreprises ne demanderons
+    jamais un mots de passe ou un acc\xE8s de compte en ligne.\n2. Demander toujours
+    une lettre pour les paiement, sans donner d'informations personnels suppl\xE9mentaire.\n3.
+    Faire attention \xE0 l'exp\xE9diteur.\n\nPensez \xE0 consulter le lien suivant
+    r\xE9guli\xE8rement pour savoir si une de vos adresses mails \xE0 \xE9t\xE9 compromise.\r\n\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7267f5f07152f948bff43d6bb186b6a, type: 2}
   m_sharedMaterial: {fileID: 4090137588325300810, guid: b7267f5f07152f948bff43d6bb186b6a, type: 2}
@@ -4887,7 +4892,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.85
+  m_fontSize: 22.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

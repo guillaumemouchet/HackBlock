@@ -21,6 +21,12 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
+        if(ApplicationMail.hasEvent)
+            mailNotif.SetActive(true);
+        if (ApplicationSearch.hasEvent)
+            searchNotif.SetActive(true);
+        if (ApplicationSettings.hasEvent)
+            settingNotif.SetActive(true);
         if (timeValue > 0)
         {
             timeValue -= Time.deltaTime;
@@ -28,8 +34,10 @@ public class Timer : MonoBehaviour
         else
         {
             timeValue = 0;
+            
+            if(!isFinished)
+                SelectEvent();
             isFinished = true;
-            SelectEvent();
         }
     }
 
@@ -47,27 +55,28 @@ public class Timer : MonoBehaviour
     private void SelectEvent()
     {
         print("END TIMER");
-        int test  = Random.Range(1, 2);
+        int test  = Random.Range(1, 3);
 
         switch(test)
         {
             case 1: // MAIL
-                SpriteRenderer sprite  = mail.GetComponent<SpriteRenderer>();
-                sprite.sprite = spriteMailNotif;
+                
                 ApplicationMail.hasEvent = true;
                 break;
-            case 2: // WIFI
+            case 2: // SEARCH ENGINE
+                ApplicationSearch.hasEvent = true;
+                break;
+            case 3: // WIFI
                 TextMeshProUGUI text = wifi.GetComponent<TextMeshProUGUI>();
-                text.text = "No wifi";
+                text.text = "No wifi"; // TODO : Block other applications if wifi is down
                 ApplicationSettings.hasEvent = true;
                 break;
-
-
+            case 4: //  SOCIAL NETWORK
+                // TODO
+                break;
 
         }
-        ResetTimer();
-
-
+        //No reseting the timer to not have too keep the events stored, have one event at a time
     }
 
     /***************************************************************\
@@ -94,10 +103,17 @@ public class Timer : MonoBehaviour
     public float timeValue;
     private bool isFinished = false;
     [SerializeField] private GameObject mail;
-    [SerializeField] private Sprite spriteMailNotif;
-    [SerializeField] private Sprite spriteMail;
-    //[SerializeField] private GameObject settings;
+    [SerializeField] private GameObject mailNotif;
+
+    [SerializeField] private GameObject search;
+    [SerializeField] private GameObject searchNotif;
+
+
     [SerializeField] private GameObject wifi;
+    [SerializeField] private GameObject settingNotif;
+
+    [SerializeField] private GameObject socialNotif;
+
 
 
 }

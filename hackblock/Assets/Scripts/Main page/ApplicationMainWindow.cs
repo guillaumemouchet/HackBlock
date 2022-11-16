@@ -6,18 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ApplicationMainWindow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+  
     private void OnMouseUpAsButton()
     {
         Debug.Log("Touched " + this.transform.name);
@@ -31,17 +20,11 @@ public class ApplicationMainWindow : MonoBehaviour
 
         } else if (this.transform.name.Equals("Social Network"))
         {
-            SceneManager.LoadScene("Social Network");
+            SceneManager.LoadScene("SocialNetwork");
         } else if (this.transform.name.Equals("Search Engine"))
         {
-            SceneManager.LoadScene("Search Engine");
+            SceneManager.LoadScene("SearchEngine");
         }
-
-    }
-
-    public void mailSprite()
-    {
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject
 
     }
 }
