@@ -4,55 +4,75 @@ using System.Xml.Schema;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public  class PlayerLife : MonoBehaviour
 {
 
-    public static PlayerLife Instance { get; private set; }
+    public static PlayerLife Instance;
 
-    [SerializeField] GameObject Test;
-    int totalLife = 3;
-    bool isDead = false;
+    [SerializeField] GameObject life1;
+    [SerializeField] GameObject life2;
+    [SerializeField] GameObject life3;
+
+    List<GameObject> lifeList;
+    public int totalLife;
     private void Awake()
     {
-        // If there is an instance, and it's not me, delete myself.
 
-        if (Instance != null && Instance != this)
+        if (Instance != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Instance = this;
-        }
+
+        Instance = this;
+        lifeList = new List<GameObject>() {
+               life1,
+               life2,
+               life3,
+            };
+        DontDestroyOnLoad(gameObject);
+        
     }
 
     public void displayLife()
     {
-        Test.GetComponent<TextMeshProUGUI>().text = totalLife.ToString();
+        
+        foreach (GameObject life in lifeList)
+            {
+                life.SetActive(false);
+            }
+
+        //Display or not the life
+        for (int i = 0; i < totalLife; i++)
+        {
+            lifeList[i].SetActive(true);
+        }
     }
 
-    public void checkIfDead()
+    public bool checkIfDead()
     {
         if(totalLife<=0)
         {
-            isDead = true;
+            return true;
         }
+        return false;
     }
 
     public void looseLife()
     {
         totalLife--;
+        displayLife();
     }
-
-    private void Update()
+    public void Update()
     {
         displayLife();
-
-        if(isDead)
+        if (checkIfDead())
         {
-            //TODO DISPLAY LA PAGE DE MORT
-            Debug.Log("TEST FIN DE MORT");
+            SceneManager.LoadScene("EndGame");
+            Destroy(this);
         }
+
     }
 }

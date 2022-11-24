@@ -77,6 +77,7 @@ public class ActionsMail : MonoBehaviour
                     answerLink.SetActive(true);
                     break;
             }
+            //Player loose life
             PlayerLife player = PlayerLife.Instance;
             player.looseLife();
 

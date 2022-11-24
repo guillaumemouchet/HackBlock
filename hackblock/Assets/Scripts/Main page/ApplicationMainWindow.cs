@@ -4,10 +4,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+[DisallowMultipleComponent]
 public class ApplicationMainWindow : MonoBehaviour
 {
-  
-    private void OnMouseUpAsButton()
+
+        private void OnMouseUpAsButton()
     {
         Debug.Log("Touched " + this.transform.name);
 

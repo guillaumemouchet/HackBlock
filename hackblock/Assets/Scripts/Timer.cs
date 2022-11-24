@@ -1,7 +1,7 @@
 /*
  * Title : Timer 
- * Authors : Titus Abele, Benjamin Mouchet, Guillaume Mouchet, Dorian Tan
- * Date : 29.08.2022
+ * Authors : Guillaume Mouchet 
+ * Date : 24.11.2022
  * Source : 
  */
 using System;
@@ -55,23 +55,26 @@ public class Timer : MonoBehaviour
     private void SelectEvent()
     {
         print("END TIMER");
-        int test  = Random.Range(1, 3);
+        int test  = Random.Range(1, 7);
 
         switch(test)
         {
             case 1: // MAIL
-                
+            case 2:
+            case 3:
+            case 4:
+            case 5:
                 ApplicationMail.hasEvent = true;
                 break;
-            case 2: // SEARCH ENGINE
+            case 6: // SEARCH ENGINE
                 ApplicationSearch.hasEvent = true;
                 break;
-            case 3: // WIFI
+            case 10: // WIFI
                 TextMeshProUGUI text = wifi.GetComponent<TextMeshProUGUI>();
                 text.text = "No wifi"; // TODO : Block other applications if wifi is down
                 ApplicationSettings.hasEvent = true;
                 break;
-            case 4: //  SOCIAL NETWORK
+            case 11: //  SOCIAL NETWORK
                 // TODO
                 break;
 
@@ -113,7 +116,4 @@ public class Timer : MonoBehaviour
     [SerializeField] private GameObject settingNotif;
 
     [SerializeField] private GameObject socialNotif;
-
-
-
 }

@@ -65,6 +65,7 @@ public class ApplicationSearch : MonoBehaviour
             switch (test)
             {
                 case 1:
+                    defaultPanel.SetActive(false);
                     amazonPanel.SetActive(true);
                     validateBtn.SetActive(true);
                     break;
@@ -104,8 +105,6 @@ public class ApplicationSearch : MonoBehaviour
                             Debug.Log(pass + " " + conPass);
                             if (isChecked)
                             {
-                                Debug.Log("DO SOME funny shit");
-
                                 //Do something with the fact that the player read or not the tearms
                                 if (hasReadTerms)
                                 {
@@ -121,19 +120,18 @@ public class ApplicationSearch : MonoBehaviour
                                 else
                                 {
                                     //Go to the wrong answer panel
-                                    PlayerLife player = PlayerLife.Instance;
-                                    player.looseLife();
                                     lostPanel.SetActive(true);
                                     validateBtn.SetActive(false);
                                     amazonPanel.SetActive(false);
                                     hasEvent = false;
 
+                                    //Player loose life
+                                    PlayerLife player = PlayerLife.Instance;
+                                    player.looseLife();
                                 }
 
                             }
                         }
-
-
                     }
                 }
             }
@@ -256,7 +254,7 @@ public class ApplicationSearch : MonoBehaviour
                 lostPanel.SetActive(true);
                 verifyPanel.SetActive(false);
                 validateBtn.SetActive(false);
-
+                returnBtn.SetActive(true);
                 //Player loose life
                 PlayerLife player = PlayerLife.Instance;
                 player.looseLife();
@@ -286,7 +284,7 @@ public class ApplicationSearch : MonoBehaviour
     public void onWrite()
     {
         //System.Diagnostics.Process.Start("OSK.exe");
-        //clavier = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
     }
 
     public void onConditionClick()
