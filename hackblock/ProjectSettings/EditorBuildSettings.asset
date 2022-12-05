@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndGame.unity
     guid: ed56bba48cea4974d8ea27148c240cdb
+  - enabled: 1
+    path: Assets/Scenes/SocialNetwork.unity
+    guid: 73a82850715127546b8f9fa4d19ac2d4
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 398ad505d7dc5f54e89ee2a936934bb3, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 89e03a758bffab64fa1dcb111b2c8733, type: 2}
