@@ -49,6 +49,8 @@ public class ApplicationMail : MonoBehaviour
 
     private void OnEnable()
     {
+        event1Panel.SetActive(false);
+
         if (hasEvent)
         {
             //Choisir un des evenements au hasard
@@ -84,7 +86,7 @@ public class ApplicationMail : MonoBehaviour
                     subject = "Informations sur la GameJam";
                     from = "Haute école Arc";
                     mail = "gamejam@hearc.ch";
-                    content = "Cher élèves,\r\nComme vous le savez la Game Jam arrive à grand pas, pour cela nous vous demandons de bien vouloir nous envoyer un mail pour nous confirmer votre présence.\r\nPour rappel les dates sont du 19-21 novembre 2023 avec la possibilité de rester dormir la nuit sur le campus,\r\nMeilleures salutations et au plaisir de vous voir nombreux,\r\nGuillaume Mouchet\r\n";
+                    content = "Cher élèves,\r\nComme vous le savez la Game Jam arrive à grand pas, pour cela nous vous demandons de bien vouloir nous envoyer un mail pour nous confirmer votre présence.\r\nPour rappel les dates sont du 19-21 novembre 2023 avec la possibilité de rester dormir la nuit sur le campus,\r\nMeilleures salutations et au plaisir de vous voir nombreux, \r\n Guillaume Mouchet \r\n ";
                     answer = "Respond to the Email";
                     mailType = MailType.OTHER;
                     infected = false;

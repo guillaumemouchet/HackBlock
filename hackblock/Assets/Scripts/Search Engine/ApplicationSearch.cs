@@ -277,7 +277,7 @@ public class ApplicationSearch : MonoBehaviour
     public void searchOnMKM()
     {
         string search = mkmInput.GetComponent<TMP_InputField>().text;
-        search.Replace(" ", "+");
+        search = search.Replace(" ", "-");
         Debug.Log(search);
         Application.OpenURL("https://www.cardmarket.com/fr/Magic/Cards/"+search+"/Versions");
     }
