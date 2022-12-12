@@ -13,7 +13,7 @@ unity-build:
   tags:
     - unity
 playstore:
-  script: "echo 'Deploying...'"
+  script: "echo 'Deploy...'"
   stage: deploy
   tags:
     - unity
