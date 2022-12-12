@@ -8,7 +8,7 @@ unit-test:
   tags:
     - unity
 unity-build:
-  script: "echo 'Building...'"
+  script: "echo 'Build...'"
   stage: build
   tags:
     - unity
