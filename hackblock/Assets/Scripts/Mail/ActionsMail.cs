@@ -16,6 +16,8 @@ public class ActionsMail : MonoBehaviour
     [SerializeField] private GameObject eventPanel;
     [SerializeField] private GameObject answerLink;
     [SerializeField] private GameObject answerAttachment;
+    [SerializeField] private GameObject noWifiPanel;
+
     [SerializeField] private GameObject answerOther;
     [SerializeField] private GameObject answerNormal;
 
@@ -26,7 +28,7 @@ public class ActionsMail : MonoBehaviour
     public void ReturnClick()
     {
 
-            if (mainPanel.gameObject.activeInHierarchy)
+            if (mainPanel.gameObject.activeInHierarchy || noWifiPanel.gameObject.activeInHierarchy)
             {
                 Debug.Log("Main");
                 SceneManager.LoadScene("MainWindow");

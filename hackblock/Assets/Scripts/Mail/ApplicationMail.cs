@@ -1,24 +1,21 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Security.Cryptography.X509Certificates;
+/*
+ * Title : Application Mail 
+ * Authors : Guillaume Mouchet 
+ * Date : 08.12.2022
+ * Source : 
+ */
+
+
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Net.WebRequestMethods;
-using static Unity.VisualScripting.Member;
-using static UnityEditor.ShaderData;
-using Application = UnityEngine.Application;
 using Random = UnityEngine.Random;
 
 public class ApplicationMail : MonoBehaviour
 {
     [SerializeField] private GameObject event1Panel;
     [SerializeField] private GameObject mainPanel;
+    [SerializeField] private GameObject noWifiPanel;
+
     [SerializeField] private GameObject validate;
     [SerializeField] private GameObject returnBtn;
 
@@ -45,14 +42,23 @@ public class ApplicationMail : MonoBehaviour
 
     private static MailEvent mailEvent = null;
     public static bool hasEvent = false;
+    private int clickLink = 0;
 
-
+    /***************************************************************\
+     *                      Methodes private                       *
+    \***************************************************************/
     private void OnEnable()
     {
-        event1Panel.SetActive(false);
 
-        if (hasEvent)
+        if (ApplicationSettings.hasEvent)
         {
+            // no wifi
+            noWifiPanel.SetActive(true);
+
+        }else if (hasEvent)
+        {
+
+
             //Choisir un des evenements au hasard
             int test = Random.Range(1,8);
             string subject = "";
@@ -65,11 +71,11 @@ public class ApplicationMail : MonoBehaviour
             switch (test)
             {
                 case 1:
-                    subject = "Totally not a scam";
-                    from = "Friend";
-                    mail = "friend@thisisasscam.xyz";
-                    content = "Dear Guillaume,\r\n\vCan you send me some money by following the link ? I’m quite in a hurry stuck in another country !\r\n\r\nhttp://www.ImGonnaTakeYourPersonnalInformation.DoNotTrustMe\v\vBest regards,\r\nTotally Not your Friend \r\n";
-                    answer = "Accept the Email and follow the link";
+                    subject = "Your adress is good to go";
+                    from = "Netflix";
+                    mail = "neflix@support.com";
+                    content = "Hi Guillaume,\r\n\v As requested, your email has been updated. Sign in with your new email from now. \r\n\v If you DID NOT make this change, please contact us via phone. We can be reached at 877.Netflix.411 and phone support is available 24/7 \r\v\n Thanks for watching,\r\n\v The netflix Team";
+                    answer = "Call the number";
                     mailType = MailType.LINK;
                     infected = true;
                     break;
@@ -86,7 +92,7 @@ public class ApplicationMail : MonoBehaviour
                     subject = "Informations sur la GameJam";
                     from = "Haute école Arc";
                     mail = "gamejam@hearc.ch";
-                    content = "Cher élèves,\r\nComme vous le savez la Game Jam arrive à grand pas, pour cela nous vous demandons de bien vouloir nous envoyer un mail pour nous confirmer votre présence.\r\nPour rappel les dates sont du 19-21 novembre 2023 avec la possibilité de rester dormir la nuit sur le campus,\r\nMeilleures salutations et au plaisir de vous voir nombreux, \r\n Guillaume Mouchet \r\n ";
+                    content = "Cher élèves,\r\nComme vous le savez la Game Jam arrive à grand pas, pour cela nous vous demandons de bien vouloir nous envoyer un mail pour nous confirmer votre présence.\r\nPour rappel les dates sont du 19-21 novembre 2023 avec la possibilité de rester dormir la nuit sur le campus,\r\nMeilleures salutations et au plaisir de vous voir nombreux, \r\nGuillaume Mouchet \r\n";
                     answer = "Respond to the Email";
                     mailType = MailType.OTHER;
                     infected = false;
@@ -133,11 +139,16 @@ public class ApplicationMail : MonoBehaviour
 
             inFromMain.GetComponent<TextMeshProUGUI>().text = from;
             inSubjectMain.GetComponent<TextMeshProUGUI>().text = subject;
+            event1Panel.SetActive(false);
+            mainPanel.SetActive(true);
+            noWifiPanel.SetActive(false);
 
-                     
         }
         else
         {
+            event1Panel.SetActive(false);
+            mainPanel.SetActive(true);
+            noWifiPanel.SetActive(false);
             //montrer le pannel de base disant qu'il n'y a pas de mail
             inFromMain.GetComponent<TextMeshProUGUI>().text = "You have no mail";
             inSubjectMain.GetComponent<TextMeshProUGUI>().text = "Take a rest and go outside";
@@ -146,6 +157,9 @@ public class ApplicationMail : MonoBehaviour
 }
 
 
+    /***************************************************************\
+     *                      Methodes publiques                     *
+    \***************************************************************/
     public void onListClick()
     {
         if (hasEvent)
@@ -178,7 +192,6 @@ public class ApplicationMail : MonoBehaviour
         return mailEvent;
     }
 
-    private int clickLink = 0;
     public void OnLinkClick()
     {
         if (clickLink == 0)
@@ -186,7 +199,6 @@ public class ApplicationMail : MonoBehaviour
             switch (mailEvent.getMailType())
             {
                 case MailType.OTHER:
-                    //TOOD
                     Application.OpenURL(answerLinkBtn.GetComponentInChildren<TextMeshProUGUI>().text);
                     answerOtherBtn.SetActive(false);
                     break;
@@ -194,7 +206,6 @@ public class ApplicationMail : MonoBehaviour
 
                     break;
                 case MailType.ATTACHMENT:
-                    //TOOD
                     Application.OpenURL(answerLinkBtn.GetComponentInChildren<TextMeshProUGUI>().text);
                     answerAttachmentBtn.SetActive(false);
                     break;
@@ -236,6 +247,10 @@ public class ApplicationMail : MonoBehaviour
 
 
     }
+
+    /***************************************************************\
+     *                      Attributes private                     *
+    \***************************************************************/
 
 
 }

@@ -19,9 +19,12 @@ public class Timer : MonoBehaviour
         ResetTimer();
     }
 
+    /***************************************************************\
+     *                      Methodes private                       *
+    \***************************************************************/
     private void Update()
     {
-        if(ApplicationMail.hasEvent)
+        if (ApplicationMail.hasEvent)
             mailNotif.SetActive(true);
         if (ApplicationSearch.hasEvent)
             searchNotif.SetActive(true);
@@ -34,18 +37,12 @@ public class Timer : MonoBehaviour
         else
         {
             timeValue = 0;
-            
-            if(!isFinished)
+
+            if (!isFinished)
                 SelectEvent();
             isFinished = true;
         }
     }
-
-
-    /***************************************************************\
-     *                      Methodes private                       *
-    \***************************************************************/
-
 
     private void OnDestroy()
     {
@@ -55,7 +52,7 @@ public class Timer : MonoBehaviour
     private void SelectEvent()
     {
         print("END TIMER");
-        int test  = Random.Range(1, 7);
+        int test  = Random.Range(1, 9);
 
         switch(test)
         {
@@ -69,9 +66,10 @@ public class Timer : MonoBehaviour
             case 6: // SEARCH ENGINE
                 ApplicationSearch.hasEvent = true;
                 break;
-            case 10: // WIFI
+            case 7: // WIFI
+            case 8:
                 TextMeshProUGUI text = wifi.GetComponent<TextMeshProUGUI>();
-                text.text = "No wifi"; // TODO : Block other applications if wifi is down
+                text.text = "No wifi";
                 ApplicationSettings.hasEvent = true;
                 break;
             case 11: //  SOCIAL NETWORK

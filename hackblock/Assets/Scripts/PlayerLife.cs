@@ -65,13 +65,19 @@ public  class PlayerLife : MonoBehaviour
         totalLife--;
         displayLife();
     }
+
+    public void restart()
+    {
+        totalLife = 3;
+        displayLife();
+    }
     public void Update()
     {
         displayLife();
         if (checkIfDead())
         {
             SceneManager.LoadScene("EndGame");
-            Destroy(this);
+            //Destroy(this);
         }
 
     }

@@ -3,9 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using TMPro;
-using TMPro.EditorUtilities;
-using TMPro.Examples;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,6 +15,7 @@ public class ApplicationSearch : MonoBehaviour
     [SerializeField] private GameObject verifyPanel;
     [SerializeField] private GameObject lostPanel;
     [SerializeField] private GameObject defaultPanel;
+    [SerializeField] private GameObject noWifiPanel;
 
 
     [SerializeField] private GameObject nameInput;
@@ -44,7 +42,7 @@ public class ApplicationSearch : MonoBehaviour
 
     public static bool hasEvent = false;
 
-    private string name = "";
+    private string username = "";
     private string surname = "";
     private string email = "";
     private string adress = "";
@@ -57,7 +55,12 @@ public class ApplicationSearch : MonoBehaviour
 
     private void OnEnable()
     {
-        if (hasEvent)
+        if (ApplicationSettings.hasEvent)
+        {
+            // no wifi
+            noWifiPanel.SetActive(true);
+        }
+        else if (hasEvent)
         {
             //Choose an event at random
             int test = Random.Range(1, 2);
@@ -66,7 +69,10 @@ public class ApplicationSearch : MonoBehaviour
             {
                 case 1:
                     defaultPanel.SetActive(false);
+                    lostPanel.SetActive(false);
+                    verifyPanel.SetActive(false);
                     amazonPanel.SetActive(true);
+                    noWifiPanel.SetActive(false);
                     validateBtn.SetActive(true);
                     break;
                 case 2:
@@ -76,8 +82,12 @@ public class ApplicationSearch : MonoBehaviour
         }
         else
         {
-            //Create a simple search engine that redirects on the internet?
+            //Create a simple search engine that redirects on the internet
             defaultPanel.SetActive(true);
+            lostPanel.SetActive(false);
+            verifyPanel.SetActive(false);
+            amazonPanel.SetActive(false);
+            noWifiPanel.SetActive(false);
         }
 
     }
@@ -87,7 +97,7 @@ public class ApplicationSearch : MonoBehaviour
     }
     public void onValidateClick()
     {
-        if (name != "")
+        if (username != "")
         {
             Debug.Log(name);
             if (surname != "")
@@ -141,12 +151,12 @@ public class ApplicationSearch : MonoBehaviour
 
     public void validateName()
     {
-        name = nameInput.GetComponent<TMP_InputField>().text;
+        username = nameInput.GetComponent<TMP_InputField>().text;
         //If we find anything other than letters it doesn't work
         if (Regex.IsMatch(name, "[^a-zA-Z ]+"))
         {
             textName.SetActive(true);
-            name = "";
+            username = "";
         }
         else
         {
@@ -162,10 +172,8 @@ public class ApplicationSearch : MonoBehaviour
 
         if (Regex.IsMatch(surname, "[^a-zA-Z ]+"))
         {
-
             textSurname.SetActive(true);
             surname = "";
-
         }
         else
         {
@@ -283,10 +291,16 @@ public class ApplicationSearch : MonoBehaviour
     }
     public void onWrite()
     {
-        //System.Diagnostics.Process.Start("OSK.exe");
         TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
     }
-
+    public void onWriteEmail()
+    {
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.EmailAddress);
+    }
+    public void onWriteSecret()
+    {
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default,false, false,true);
+    }
     public void onConditionClick()
     {
         hasReadTerms = true;

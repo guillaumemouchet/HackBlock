@@ -10,6 +10,7 @@ using UnityEngine;
  * Social Network : https://www.flaticon.com/free-icon/network_149181?term=social%20network&page=1&position=14&page=1&position=14&related_id=149181&origin=search
  * Hacker : https://www.flaticon.com/free-icon/hacker_1320457?term=hacker&page=1&position=3&page=1&position=3&related_id=1320457&origin=search
  * Life : https://www.flaticon.com/free-icon/personal-information_3076333?term=personal%20data&page=1&position=7&page=1&position=7&related_id=3076333&origin=search
+ * No connexion : https://www.flaticon.com/free-icon/no-internet_6119901?term=no%20internet&page=1&position=6&page=1&position=6&related_id=6119901&origin=search
  * Wallpaper : They all come from my personnal Gallery
  */
 
@@ -37,7 +38,13 @@ public class Hotbar : MonoBehaviour
 
     private void DisplayWifi()
     {
-        
+        if(ApplicationSettings.hasEvent)
+        {
+            TMP_wifi.text = "no wifi";
+        }else
+        {
+            TMP_wifi.text = "wifi";
+        }
     }
 
     private void DisplayBattery()

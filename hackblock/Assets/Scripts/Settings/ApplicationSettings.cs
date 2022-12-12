@@ -10,19 +10,22 @@ public class ApplicationSettings : MonoBehaviour
     [SerializeField] private GameObject wifiPanel;
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject proposPanel;
-    [SerializeField] private Button proposBtn;
-    [SerializeField] private Button wifiBtn;
+
+    [SerializeField] private GameObject wifiTxt;
+
     [SerializeField] private GameObject notif;
     public static bool hasEvent = false;
 
 
     private void OnEnable()
     {
+        mainPanel.SetActive(true);
+        wifiPanel.SetActive(false);
+        proposPanel.SetActive(false);
         if (hasEvent)
         {
             notif.SetActive(true);
-            TextMeshProUGUI txt = wifiPanel.GetComponentInChildren<TextMeshProUGUI>();
-            txt.text = "Choose a new Wifi";
+            wifiTxt.GetComponent<TextMeshProUGUI>().text = "Choose a new wifi";
         }
 
     }
@@ -31,6 +34,13 @@ public class ApplicationSettings : MonoBehaviour
     {
         mainPanel.SetActive(false);
         wifiPanel.SetActive(true);
+    }
+
+    public void connexionWifiClick()
+    {
+        wifiTxt.GetComponent<TextMeshProUGUI>().text = "Connected to the wifi";
+        notif.SetActive(false);
+        hasEvent = false;
     }
 
     public void proposClick()
