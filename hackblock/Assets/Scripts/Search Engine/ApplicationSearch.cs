@@ -1,58 +1,23 @@
-using Newtonsoft.Json.Bson;
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Title : ApplicationSearch
+ * Authors : Guillaume Mouchet 
+ * Date : 12.12.2022
+ * Source : 
+ */
+
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.Windows;
 
 public class ApplicationSearch : MonoBehaviour
 {
 
-    [SerializeField] private GameObject amazonPanel;
-    [SerializeField] private GameObject verifyPanel;
-    [SerializeField] private GameObject lostPanel;
-    [SerializeField] private GameObject defaultPanel;
-    [SerializeField] private GameObject noWifiPanel;
 
 
-    [SerializeField] private GameObject nameInput;
-    [SerializeField] private GameObject surnameInput;
-    [SerializeField] private GameObject emailInput;
-    [SerializeField] private GameObject adressInput;
-    [SerializeField] private GameObject passInput;
-    [SerializeField] private GameObject conPassInput;
-    [SerializeField] private GameObject dateInput;
-
-    [SerializeField] private GameObject internetInput;
-    [SerializeField] private GameObject mkmInput;
-
-
-    [SerializeField] private GameObject textName;
-    [SerializeField] private GameObject textSurname;
-    [SerializeField] private GameObject textEmail;
-    [SerializeField] private GameObject textAdress;
-    [SerializeField] private GameObject textPass;
-    [SerializeField] private GameObject textConPass;
-
-    [SerializeField] private GameObject validateBtn;
-    [SerializeField] private GameObject returnBtn;
-
-    public static bool hasEvent = false;
-
-    private string username = "";
-    private string surname = "";
-    private string email = "";
-    private string adress = "";
-    private string pass = "";
-    private string conPass = "";
-    private bool hasReadTerms = false;
-    private bool isChecked = false;
-
-
-
+    /***************************************************************\
+     *                      Methodes private                       *
+    \***************************************************************/
     private void OnEnable()
     {
         if (ApplicationSettings.hasEvent)
@@ -91,6 +56,12 @@ public class ApplicationSearch : MonoBehaviour
         }
 
     }
+
+
+
+    /***************************************************************\
+     *                      Methodes publiques                     *
+    \***************************************************************/
     public void onReturnClick()
     {
         SceneManager.LoadScene("MainWindow");
@@ -307,7 +278,6 @@ public class ApplicationSearch : MonoBehaviour
         Application.OpenURL("https://www.amazon.com/gp/help/customer/display.html?nodeId=G2B9L3YR7LR8J4XP");
     }
 
-
     public void OnConditionToggle()
     {
         //Open a web page with terms and conditions or create my own page
@@ -316,5 +286,49 @@ public class ApplicationSearch : MonoBehaviour
 
     }
 
+    /***************************************************************\
+     *                      Attributes private                     *
+    \***************************************************************/
+
+
+    [SerializeField] private GameObject amazonPanel;
+    [SerializeField] private GameObject verifyPanel;
+    [SerializeField] private GameObject lostPanel;
+    [SerializeField] private GameObject defaultPanel;
+    [SerializeField] private GameObject noWifiPanel;
+
+
+    [SerializeField] private GameObject nameInput;
+    [SerializeField] private GameObject surnameInput;
+    [SerializeField] private GameObject emailInput;
+    [SerializeField] private GameObject adressInput;
+    [SerializeField] private GameObject passInput;
+    [SerializeField] private GameObject conPassInput;
+    [SerializeField] private GameObject dateInput;
+
+    [SerializeField] private GameObject internetInput;
+    [SerializeField] private GameObject mkmInput;
+
+
+    [SerializeField] private GameObject textName;
+    [SerializeField] private GameObject textSurname;
+    [SerializeField] private GameObject textEmail;
+    [SerializeField] private GameObject textAdress;
+    [SerializeField] private GameObject textPass;
+    [SerializeField] private GameObject textConPass;
+
+    [SerializeField] private GameObject validateBtn;
+    [SerializeField] private GameObject returnBtn;
+
+    public static bool hasEvent = false;
+
+    private string username = "";
+    private string surname = "";
+    private string email = "";
+    private string adress = "";
+    private string pass = "";
+    private string conPass = "";
+    private bool hasReadTerms = false;
+    private bool isChecked = false;
 
 }

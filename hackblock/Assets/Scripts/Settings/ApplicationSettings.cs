@@ -1,22 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Title : ApplicationSettings 
+ * Authors : Guillaume Mouchet 
+ * Date : 12.12.2022
+ * Source : 
+ */
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 
 public class ApplicationSettings : MonoBehaviour
 {
-    [SerializeField] private GameObject wifiPanel;
-    [SerializeField] private GameObject mainPanel;
-    [SerializeField] private GameObject proposPanel;
-
-    [SerializeField] private GameObject wifiTxt;
-
-    [SerializeField] private GameObject notif;
-    public static bool hasEvent = false;
 
 
+    /***************************************************************\
+     *                      Methodes private                       *
+    \***************************************************************/
     private void OnEnable()
     {
         mainPanel.SetActive(true);
@@ -29,7 +27,10 @@ public class ApplicationSettings : MonoBehaviour
         }
 
     }
-    
+    /***************************************************************\
+     *                      Methodes publiques                     *
+    \***************************************************************/
+
     public void wifiClick()
     {
         mainPanel.SetActive(false);
@@ -48,4 +49,18 @@ public class ApplicationSettings : MonoBehaviour
         mainPanel.SetActive(false);
         proposPanel.SetActive(true);
     }
+
+    /***************************************************************\
+    *                      Attributes private                     *
+    \***************************************************************/
+    [SerializeField] private GameObject wifiPanel;
+    [SerializeField] private GameObject mainPanel;
+    [SerializeField] private GameObject proposPanel;
+
+    [SerializeField] private GameObject wifiTxt;
+
+    [SerializeField] private GameObject notif;
+    public static bool hasEvent = false;
+
+
 }

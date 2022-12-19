@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Title : ApplicationSocialNetwork 
+ * Authors : Guillaume Mouchet 
+ * Date : 12.12.2022
+ * Source : 
+ */
 using UnityEngine;
 
 public class ApplicationSocialNetwork : MonoBehaviour
 {
-    public static bool hasEvent = false;
-    [SerializeField] private GameObject noWifiPanel;
-    [SerializeField] private GameObject mainPanel;
+    /***************************************************************\
+       *                      Methodes private                       *
+      \***************************************************************/
 
-
-    // Start is called before the first frame update
-    void OnEnable()
+    private void OnEnable()
     {
 
         if (ApplicationSettings.hasEvent)
@@ -18,16 +20,31 @@ public class ApplicationSocialNetwork : MonoBehaviour
             // no wifi
             noWifiPanel.SetActive(true);
             mainPanel.SetActive(false);
-
         }
         else if (hasEvent)
         {
-            mainPanel
-                .SetActive(true);
+            mainPanel.SetActive(true);
             noWifiPanel.SetActive(false);
 
             Application.OpenURL("https://www.instagram.com");
         }
+        mainPanel.SetActive(true);
+        noWifiPanel.SetActive(false);
+        hasEvent = false;
     }
+    /***************************************************************\
+     *                      Methodes publiques                     *
+    \***************************************************************/
+
+
+     /***************************************************************\
+      *                      Attributes private                     *
+     \***************************************************************/
+
+
+    public static bool hasEvent = false;
+    [SerializeField] private GameObject noWifiPanel;
+    [SerializeField] private GameObject mainPanel;
+
 
 }

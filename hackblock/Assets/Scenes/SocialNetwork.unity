@@ -897,6 +897,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7118389617340860651, guid: a828f0f6240357d4c8cc6457eef48a8a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7118389617390200550, guid: a828f0f6240357d4c8cc6457eef48a8a, type: 3}
       propertyPath: m_Name
       value: No wifi
@@ -1324,6 +1328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noWifiPanel: {fileID: 1477469802}
+  mainPanel: {fileID: 1266125320}
 --- !u!1 &1727558549
 GameObject:
   m_ObjectHideFlags: 0

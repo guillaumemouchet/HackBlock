@@ -1011,7 +1011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -247.49997, y: 406.49973}
+  m_AnchoredPosition: {x: 0.000030517578, y: 406.5}
   m_SizeDelta: {x: 495, y: 1200}
   m_Pivot: {x: 0.50000006, y: 1.0000001}
 --- !u!114 &130216303
@@ -1034,14 +1034,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Les entreprises ou services publics profitent que les gens cr\xE9ent des
-    comptes et ne lisent pas les conditions d'utilisations afin de vendre leur donn\xE9es.
-    C'est le principal buisiness plan de Uber.\n\nIl faut faire attention \xE0 pluieurs
-    choses en les lisants.\n\n1. Ou est stock\xE9 les donn\xE9es, car les lois changent
-    entre la Suisse et le reste du monde.\n\n2. Qu'est ce qu'ils peuvent faire des
-    donn\xE9es fournies, est ce qu'ils les revendent, est ce qu'ils les gardent pour
-    un usage personnel.\n\nVous pouvez maintenant profiter de publicit\xE9s cibl\xE9e,
-    au d\xE9triment de votre anonymat."
+  m_text: "Companies or public services take advantage of the fact that people create
+    accounts and do not read the terms and conditions in order to sell their data.
+    This is Uber's main business plan.\r\n\r\nThere are many things to be aware of
+    when reading them.\r\n\r\n1. Where the data is stored, because the laws change
+    between Switzerland and the rest of the world.\r\n\r\n2. What can they do with
+    the data provided, do they resell it, do they keep it for personal use.\r\n\r\nYou
+    can now enjoy targeted ads, at the expense of your anonymity.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7267f5f07152f948bff43d6bb186b6a, type: 2}
   m_sharedMaterial: {fileID: 4090137588325300810, guid: b7267f5f07152f948bff43d6bb186b6a, type: 2}
@@ -1714,7 +1713,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1359431424}
   m_HandleRect: {fileID: 1359431423}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3701,8 +3700,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 652054910}
   m_HandleRect: {fileID: 652054909}
   m_Direction: 2
-  m_Value: 1.000001
-  m_Size: 0.6774938
+  m_Value: 1.0000004
+  m_Size: 0.6775
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4050,7 +4049,7 @@ RectTransform:
   m_Father: {fileID: 1568239995}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.3225062}
+  m_AnchorMin: {x: 0, y: 0.3225}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -10287,8 +10286,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

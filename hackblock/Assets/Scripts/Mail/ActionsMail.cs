@@ -1,6 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
+/*
+ * Title : ActionMail 
+ * Authors : Guillaume Mouchet 
+ * Date : 12.12.2022
+ * Source : 
+ */
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,20 +12,9 @@ using UnityEngine.UI;
 
 public class ActionsMail : MonoBehaviour
 {
-
-    [SerializeField] private GameObject returnBtn;
-    [SerializeField] private GameObject validateBtn;
-    [SerializeField] private GameObject mainPanel;
-    [SerializeField] private GameObject eventPanel;
-    [SerializeField] private GameObject answerLink;
-    [SerializeField] private GameObject answerAttachment;
-    [SerializeField] private GameObject noWifiPanel;
-
-    [SerializeField] private GameObject answerOther;
-    [SerializeField] private GameObject answerNormal;
-
-    [SerializeField] private GameObject inFromMain;
-    [SerializeField] private GameObject inSubjectMain;
+    /***************************************************************\
+     *                      Methodes publiques                     *
+    \***************************************************************/
 
 
     public void ReturnClick()
@@ -97,4 +89,26 @@ public class ActionsMail : MonoBehaviour
         }
 
     }
+    /***************************************************************\
+     *                      Methodes private                       *
+    \***************************************************************/
+
+
+    /***************************************************************\
+     *                      Attributes private                     *
+    \***************************************************************/
+
+    [SerializeField] private GameObject returnBtn;
+    [SerializeField] private GameObject validateBtn;
+    [SerializeField] private GameObject mainPanel;
+    [SerializeField] private GameObject eventPanel;
+    [SerializeField] private GameObject answerLink;
+    [SerializeField] private GameObject answerAttachment;
+    [SerializeField] private GameObject noWifiPanel;
+
+    [SerializeField] private GameObject answerOther;
+    [SerializeField] private GameObject answerNormal;
+
+    [SerializeField] private GameObject inFromMain;
+    [SerializeField] private GameObject inSubjectMain;
 }

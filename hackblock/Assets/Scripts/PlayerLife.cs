@@ -1,22 +1,20 @@
-using System.Collections;
+/*
+ * Title : PlayerLife 
+ * Authors : Guillaume Mouchet 
+ * Date : 12.12.2022
+ * Source : 
+ */
 using System.Collections.Generic;
-using System.Xml.Schema;
 using UnityEngine;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
 public  class PlayerLife : MonoBehaviour
 {
 
-    public static PlayerLife Instance;
+    /***************************************************************\
+    *                      Methodes private                       *
+   \***************************************************************/
 
-    [SerializeField] GameObject life1;
-    [SerializeField] GameObject life2;
-    [SerializeField] GameObject life3;
-
-    List<GameObject> lifeList;
-    public int totalLife;
     private void Awake()
     {
 
@@ -36,7 +34,7 @@ public  class PlayerLife : MonoBehaviour
         
     }
 
-    public void displayLife()
+    private void displayLife()
     {
         
         foreach (GameObject life in lifeList)
@@ -51,7 +49,7 @@ public  class PlayerLife : MonoBehaviour
         }
     }
 
-    public bool checkIfDead()
+    private bool checkIfDead()
     {
         if(totalLife<=0)
         {
@@ -59,6 +57,10 @@ public  class PlayerLife : MonoBehaviour
         }
         return false;
     }
+    /***************************************************************\
+     *                      Methodes publiques                     *
+    \***************************************************************/
+
 
     public void looseLife()
     {
@@ -76,9 +78,34 @@ public  class PlayerLife : MonoBehaviour
         displayLife();
         if (checkIfDead())
         {
-            SceneManager.LoadScene("EndGame");
-            //Destroy(this);
+            Scene currentScene = SceneManager.GetActiveScene();
+
+            // Retrieve the name of this scene.
+            string sceneName = currentScene.name;
+
+            if (sceneName == "EndGame")
+            {
+                //DO nothing
+            }
+            else
+            {
+                SceneManager.LoadScene("EndGame");
+            }
         }
 
     }
+
+    /***************************************************************\
+    *                      Attributes private                     *
+    \***************************************************************/
+
+
+    public static PlayerLife Instance;
+
+    [SerializeField] GameObject life1;
+    [SerializeField] GameObject life2;
+    [SerializeField] GameObject life3;
+
+    List<GameObject> lifeList;
+    public int totalLife;
 }

@@ -1,3 +1,9 @@
+/*
+ * Title : ApplicationMainWindow 
+ * Authors : Guillaume Mouchet 
+ * Date : 12.12.2022
+ * Source : 
+ */
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,24 +15,34 @@ using UnityEngine.SceneManagement;
 public class ApplicationMainWindow : MonoBehaviour
 {
 
-        private void OnMouseUpAsButton()
-    {
-        Debug.Log("Touched " + this.transform.name);
+    /***************************************************************\
+     *                      Methodes private                       *
+    \***************************************************************/
+    private void OnMouseUpAsButton()
+        {
+            Debug.Log("Touched " + this.transform.name);
 
-        if (this.transform.name.Equals("Settings"))
-        {
-            SceneManager.LoadScene("Settings");
-        } else if (this.transform.name.Equals("Mail"))
-        {
-            SceneManager.LoadScene("Mail");
+            if (this.transform.name.Equals("Settings"))
+            {
+                SceneManager.LoadScene("Settings");
+            } else if (this.transform.name.Equals("Mail"))
+            {
+                SceneManager.LoadScene("Mail");
 
-        } else if (this.transform.name.Equals("Social Network"))
-        {
-            SceneManager.LoadScene("SocialNetwork");
-        } else if (this.transform.name.Equals("Search Engine"))
-        {
-            SceneManager.LoadScene("SearchEngine");
+            } else if (this.transform.name.Equals("Social Network"))
+            {
+                SceneManager.LoadScene("SocialNetwork");
+            } else if (this.transform.name.Equals("Search Engine"))
+            {
+                SceneManager.LoadScene("SearchEngine");
+            }
+
         }
 
-    }
+    /***************************************************************\
+     *                      Methodes publiques                     *
+    \***************************************************************/
+    /***************************************************************\
+     *                      Attributes private                     *
+    \***************************************************************/
 }

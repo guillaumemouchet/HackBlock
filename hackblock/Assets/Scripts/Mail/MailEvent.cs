@@ -1,6 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
+/*
+ * Title : MailEvent 
+ * Authors : Guillaume Mouchet 
+ * Date : 24.11.2022
+ * Source : 
+ */
 using UnityEngine;
 public enum MailType
 {
@@ -11,14 +14,11 @@ public enum MailType
 }
 public class MailEvent : Component
 {
-    private string subject;
-    private string from;
-    private string mail;
-    private string content;
-    private string answer;
-    private bool isInfected;
-    private MailType mailType;
-    
+
+
+    /***************************************************************\
+     *                     Constuctor private                       *
+    \***************************************************************/
     public MailEvent(string subject, string from, string mail, string content, string answer, bool isInfected, MailType mailType)
     {
 
@@ -34,6 +34,13 @@ public class MailEvent : Component
 
     }
 
+    /***************************************************************\
+     *                      Methodes private                       *
+    \***************************************************************/
+
+    /***************************************************************\
+     *                      Methodes publiques                     *
+    \***************************************************************/
     public string getSubject()
     {
         return subject;
@@ -66,5 +73,16 @@ public class MailEvent : Component
     {
         return mailType;
     }
+
+    /***************************************************************\
+     *                      Attributes private                     *
+    \***************************************************************/
+    private string subject;
+    private string from;
+    private string mail;
+    private string content;
+    private string answer;
+    private bool isInfected;
+    private MailType mailType;
 
 }

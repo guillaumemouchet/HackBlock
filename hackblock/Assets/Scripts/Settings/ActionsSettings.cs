@@ -1,6 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
+/*
+ * Title : ActionSettings
+ * Authors : Guillaume Mouchet 
+ * Date : 12.12.2022
+ * Source : 
+ */
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,12 +13,10 @@ using UnityEngine.UI;
 public class ActionsSettings : MonoBehaviour
 {
 
-    [SerializeField] private Button returnBtn;
-    [SerializeField] private Button ValidateBtn;
-    [SerializeField] private GameObject wifiPanel;
-    [SerializeField] private GameObject mainPanel;
-    [SerializeField] private GameObject proposPanel;
 
+    /***************************************************************\
+     *                      Methodes publiques                     *
+    \***************************************************************/
     public void ReturnClick()
     {
 
@@ -44,4 +46,20 @@ public class ActionsSettings : MonoBehaviour
     {
         
     }
+
+
+
+    /***************************************************************\
+     *                      Methodes private                       *
+    \***************************************************************/
+
+
+    /***************************************************************\
+     *                      Attributes private                     *
+    \***************************************************************/
+    [SerializeField] private Button returnBtn;
+    [SerializeField] private Button ValidateBtn;
+    [SerializeField] private GameObject wifiPanel;
+    [SerializeField] private GameObject mainPanel;
+    [SerializeField] private GameObject proposPanel;
 }
