@@ -220,7 +220,7 @@ public class ApplicationMail : MonoBehaviour
                     answerAttachmentBtn.SetActive(false);
                     break;
                 case MailType.LINK:
-                    answerLinkText.GetComponent<TextMeshProUGUI>().text = "What did we just say about links that should not be followed unless the source is reliable? If in any doubt you have to do the research yourself on the internet, in this case you can type in your search bar: “Have i been pwned” or click on the following link if you trust me.";
+                    answerLinkText.GetComponent<TextMeshProUGUI>().text = "What did we just say about links that should not follow unless the source is reliable? If in any doubt you have to do the research yourself on the internet, in this case you can type in your search bar: “Have i been pwned” or click on the following link if you trust me.";
                     break;
             }
             clickLink++;

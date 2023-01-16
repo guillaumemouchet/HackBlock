@@ -4116,7 +4116,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2821399345925920402, guid: a828f0f6240357d4c8cc6457eef48a8a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7118389617340860651, guid: a828f0f6240357d4c8cc6457eef48a8a, type: 3}
       propertyPath: m_IsActive
@@ -4938,7 +4938,7 @@ GameObject:
   - component: {fileID: 1072917996}
   - component: {fileID: 1072917995}
   m_Layer: 0
-  m_Name: Event 1
+  m_Name: Event
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

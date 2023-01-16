@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour
     private void SelectEvent()
     {
         print("END TIMER");
-        int test  = Random.Range(1, 10);
+        int test  = Random.Range(1,9);
 
         switch(test)
         {
@@ -71,12 +71,12 @@ public class Timer : MonoBehaviour
                 text.text = "No wifi";
                 ApplicationSettings.hasEvent = true;
                 break;
-            case 9: //  SOCIAL NETWORK
+            case 9: //  SOCIAL NETWORK -> not finished
                 ApplicationSocialNetwork.hasEvent = true;
                 break;
 
         }
-        //No reseting the timer to not have too keep the events stored, have one event at a time
+        //No reseting the timer to not have to keep the events stored, have one event at a time
     }
 
     /***************************************************************\
