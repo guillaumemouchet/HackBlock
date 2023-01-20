@@ -1342,7 +1342,7 @@ GameObject:
   - component: {fileID: 1727558552}
   - component: {fileID: 1727558551}
   m_Layer: 6
-  m_Name: Wifi
+  m_Name: social network
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

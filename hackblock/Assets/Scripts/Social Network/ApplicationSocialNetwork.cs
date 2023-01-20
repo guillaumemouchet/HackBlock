@@ -14,7 +14,8 @@ public class ApplicationSocialNetwork : MonoBehaviour
 
     private void OnEnable()
     {
-
+        mainPanel.SetActive(true);
+        noWifiPanel.SetActive(false);
         if (ApplicationSettings.hasEvent)
         {
             // no wifi
@@ -28,8 +29,6 @@ public class ApplicationSocialNetwork : MonoBehaviour
 
             Application.OpenURL("https://www.instagram.com");
         }
-        mainPanel.SetActive(true);
-        noWifiPanel.SetActive(false);
         hasEvent = false;
     }
     /***************************************************************\

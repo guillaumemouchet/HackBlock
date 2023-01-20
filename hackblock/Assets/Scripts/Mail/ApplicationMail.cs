@@ -43,11 +43,11 @@ public class ApplicationMail : MonoBehaviour
                     mailType = MailType.LINK;
                     infected = true;
                     break;
-                case 2:
+                case 2: //PROBLEME
                     subject = "Package in transit";
                     from = "Poste";
                     mail = "poste@jfkdsjfeiwfsknckjdsjh.fr";
-                    content = "Dear Customer,\r\nYour package have been stuck in transit and the customs are retaining it for missing documents.\r\nTo receive your package you need to send 100 Euro, you’ll find the payment on the your account :\r\nhttp://www.postee.fr/account/user/X849375987695\r\nThe payment must be done in the following 3 days or the customs will destroy the package,\r\nBest regards,\r\nYour postal service\r\n"; 
+                    content = "Dear Customer,\r\nYour package have been stuck in transit and the customs are retaining it for missing documents.\r\nTo receive your package you need to send 100 Euro, you’ll find the payment on the your account :\r\nhttp://www.postee.fr/account/user/X849375987695\r\nThe payment must be done in the following 3 days or the customs will destroy the package,\r\nBest regards,\r\nYour postal service\r\n\r\n"; 
                     answer = "Click the link and find the paiment plan";
                     mailType = MailType.LINK;
                     infected = true;
@@ -56,7 +56,7 @@ public class ApplicationMail : MonoBehaviour
                     subject = "Informations sur la GameJam";
                     from = "Haute école Arc";
                     mail = "gamejam@hearc.ch";
-                    content = "Chers élèves,\r\nComme vous le savez, la Game Jam arrive à grands pas, pour cela nous vous demandons de bien vouloir nous envoyer un mail pour nous confirmer votre présence.\r\nPour rappel les dates sont du 19-21 novembre 2023 avec la possibilité de rester dormir la nuit sur le campus.\r\nMeilleures salutations et au plaisir de vous voir nombreux,\r\nGuillaume Mouchet\r\n";
+                    content = "Chers élèves,\r\nComme vous le savez, la Game Jam arrive à grands pas, pour cela nous vous demandons de bien vouloir nous envoyer un mail pour nous confirmer votre présence.\r\nPour rappel les dates sont du 19-21 novembre 2023 avec la possibilité de rester dormir la nuit sur le campus.\r\nMeilleures salutations et au plaisir de vous voir nombreux,\r\nGuillaume Mouchet\r\n\r\n";
                     answer = "Respond to the Email";
                     mailType = MailType.OTHER;
                     infected = false;
@@ -70,7 +70,7 @@ public class ApplicationMail : MonoBehaviour
                     mailType = MailType.ATTACHMENT;
                     infected = false;
                     break;
-                case 5:
+                case 5: //OK
                     subject = "Banque - UBS";
                     from = "UBS";
                     mail = "thewebmaster@ubs.fr";
@@ -101,7 +101,7 @@ public class ApplicationMail : MonoBehaviour
                     subject = "un ptit verre? ;^)";
                     from = "Guillaume";
                     mail = "guillaume@outlook.com";
-                    content = "Hello,\r\ncomment tu vas depuis le temps ?\r\nÇa te dis d’aller boire un petit verre vendredi soir après les cours : ).\r\nOn se dit l’Univers à 16h30 ?\r\nPlein de bisous,\r\nGuillaume\r\n";
+                    content = "Hello,\r\ncomment tu vas depuis le temps ?\r\nÇa te dis d’aller boire un petit verre vendredi soir après les cours : ).\r\nOn se dit l’Univers à 16h30 ?\r\nPlein de bisous,\r\nGuillaume\r\n\r\n";
                     answer = "Answer you'll come";
                     mailType = MailType.OTHER;
                     infected = false;
@@ -110,7 +110,7 @@ public class ApplicationMail : MonoBehaviour
                     subject = "Urgent business proposal";
                     from = "Prince Jones Dimka";
                     mail = "princeJonesDimka@outlook.com";
-                    content = "Dear Sir, We have thirty million us dollars which we got from over inflated contract of crude oil contract awarded to foreign contractors in the Nigerian national petroleum corporation. We are seeking your assistance and permission to remit this amount into your account. Your commission is thirty percent of the money.\r\nPlease notify me your acceptance to do this business urgently. The men involved are men in government. More details will be sent to you by email. Please forward your personal phone number, address and email.\r\nContact me URGENTLY,\r\nThanks for your co-operation,\r\nYou faithfully,\r\nPrince Jones Dimka\r\n";
+                    content = "Dear Sir, We have thirty million us dollars which we got from over inflated contract of crude oil contract awarded to foreign contractors in the Nigerian national petroleum corporation. We are seeking your assistance and permission to remit this amount into your account. Your commission is thirty percent of the money.\r\nPlease notify me your acceptance to do this business urgently. The men involved are men in government. More details will be sent to you by email. Please forward your personal phone number, address and email.\r\nContact me URGENTLY,\r\nThanks for your co-operation,\r\nYou faithfully,\r\nPrince Jones Dimka\r\n\r\n";
                     answer = "Accept the money";
                     mailType = MailType.NORMAL;
                     infected = true;
@@ -119,7 +119,7 @@ public class ApplicationMail : MonoBehaviour
                     subject = "Need your assistant in your country";
                     from = "Maria DEl Pilar Rezola";
                     mail = "mariadelpilarezola001@gmail.com";
-                    content = "Dear Friend,\r\n\r\nI came across your e-mail contact prior a private search while in need of your assistance. My name is Aisha  Al-Gaddafi a single Mother and a Widow with three Children. I am the only biological Daughter of late Libyan President (Late Colonel Muammar Gaddafi).\r\n\r\nI have investment funds worth Twenty Seven Million Five Hundred Thousand United State Dollar ($27.500.000.00 ) and i need a trusted investment Manager/Partner because of my current refugee status, however, I am interested in you for investment project assistance in your country,\r\n\r\n\r\nYour Urgent Reply Will Be Appreciated. contact me at this email  address ( aishaelgaddafi@hotmail.com )  for further discussion.\r\n\r\nBest Regards\r\nMrs Aisha Al-Gaddafi";
+                    content = "Dear Friend,\r\n\r\nI came across your e-mail contact prior a private search while in need of your assistance. My name is Aisha  Al-Gaddafi a single Mother and a Widow with three Children. I am the only biological Daughter of late Libyan President (Late Colonel Muammar Gaddafi).\r\n\r\nI have investment funds worth Twenty Seven Million Five Hundred Thousand United State Dollar ($27.500.000.00 ) and i need a trusted investment Manager/Partner because of my current refugee status, however, I am interested in you for investment project assistance in your country,\r\n\r\n\r\nYour Urgent Reply Will Be Appreciated. contact me at this email  address ( aishaelgaddafi@hotmail.com )  for further discussion.\r\n\r\nBest Regards\r\nMrs Aisha Al-Gaddafi\r\n\r\n";
                     answer = "Accept the deal";
                     mailType = MailType.NORMAL;
                     infected = true;
@@ -128,7 +128,7 @@ public class ApplicationMail : MonoBehaviour
                     subject = "HELP";
                     from = "Guillaume";
                     mail = "guillaume@outlook.com";
-                    content = "Hello,\r\nJe suis coincé dans un autre pays et j’aurais besoin d’argent en urgence, est ce que tu peux m’envoyer 500 francs par ce site http://www.twiint.com/send/user que je puisse m’acheter un billet d’avion,\r\nAide moi,\r\nGuillaume\r\n";
+                    content = "Hello,\r\nJe suis coincé dans un autre pays et j’aurais besoin d’argent en urgence, est ce que tu peux m’envoyer 500 francs par ce site http://www.twiint.com/send/user que je puisse m’acheter un billet d’avion,\r\nAide moi,\r\nGuillaume\r\n\r\n";
                     answer = "Send the money";
                     mailType = MailType.NORMAL;
                     infected = true;
@@ -137,7 +137,7 @@ public class ApplicationMail : MonoBehaviour
                     subject = "Your adress is good to go";
                     from = "Netflix";
                     mail = "neflix@support.com";
-                    content = "Hi Guillaume,\r\n\v As requested, your email has been updated. Sign in with your new email from now. \r\n\v If you DID NOT make this change, please contact us via phone. We can be reached at 877.Netflix.411 and phone support is available 24/7 \r\v\n Thanks for watching,\r\n\v The netflix Team";
+                    content = "Hi Guillaume,\r\n\v As requested, your email has been updated. Sign in with your new email from now. \r\n\v If you DID NOT make this change, please contact us via phone. We can be reached at 877.Netflix.411 and phone support is available 24/7 \r\v\n Thanks for watching,\r\n\v The netflix Team\r\n\r\n";
                     answer = "Call the number";
                     mailType = MailType.LINK;
                     infected = true;
