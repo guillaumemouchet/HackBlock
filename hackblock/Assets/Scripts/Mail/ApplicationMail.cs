@@ -38,7 +38,7 @@ public class ApplicationMail : MonoBehaviour
                     subject = "Your adress is good to go";
                     from = "Netflix";
                     mail = "neflix@support.com";
-                    content = "Hi Guillaume,\r\n\v As requested, your email has been updated. Sign in with your new email from now. \r\n\v If you DID NOT make this change, please contact us via phone. We can be reached at 877.Netflix.411 and phone support is available 24/7 \r\v\n Thanks for watching,\r\n\v The netflix Team";
+                    content = "Hi Guillaume,\r\n\vAs requested, your email has been updated. Sign in with your new email from now. \r\n\v If you DID NOT make this change, please contact us via phone. We can be reached at 877.Netflix.411 and phone support is available 24/7 \r\v\n Thanks for watching,\r\n\v The netflix Team";
                     answer = "Call the number";
                     mailType = MailType.LINK;
                     infected = true;
@@ -47,7 +47,7 @@ public class ApplicationMail : MonoBehaviour
                     subject = "Package in transit";
                     from = "Poste";
                     mail = "poste@jfkdsjfeiwfsknckjdsjh.fr";
-                    content = "Dear Customer,\r\nYour package have been stuck in transit and the customs are retaining it for missing documents.\r\nTo receive your package you need to send 100 Euro, you’ll find the payment on the your account :\r\nhttp://www.postee.fr/account/user/X849375987695\r\nThe payment must be done in the following 3 days or the customs will destroy the package,\r\nBest regards,\r\nYour postal service\r\n\r\n"; 
+                    content = "Dear Customer,\r\n\vYour package have been stuck in transit and the customs are retaining it for missing documents.\r\n\vTo receive your package you need to send 100 Euro, you’ll find the payment on the your account :\r\n\vhttp://www.postee.fr/account/user/X849375987695\r\n\vThe payment must be done in the following 3 days or the customs will destroy the package,\r\n\vBest regards,\r\n\vYour postal service"; 
                     answer = "Click the link and find the paiment plan";
                     mailType = MailType.LINK;
                     infected = true;
@@ -117,9 +117,9 @@ public class ApplicationMail : MonoBehaviour
                     break;
                 case 10:
                     subject = "Need your assistant in your country";
-                    from = "Maria DEl Pilar Rezola";
+                    from = "Maria Del Pilar Rezola";
                     mail = "mariadelpilarezola001@gmail.com";
-                    content = "Dear Friend,\r\n\r\nI came across your e-mail contact prior a private search while in need of your assistance. My name is Aisha  Al-Gaddafi a single Mother and a Widow with three Children. I am the only biological Daughter of late Libyan President (Late Colonel Muammar Gaddafi).\r\n\r\nI have investment funds worth Twenty Seven Million Five Hundred Thousand United State Dollar ($27.500.000.00 ) and i need a trusted investment Manager/Partner because of my current refugee status, however, I am interested in you for investment project assistance in your country,\r\n\r\n\r\nYour Urgent Reply Will Be Appreciated. contact me at this email  address ( aishaelgaddafi@hotmail.com )  for further discussion.\r\n\r\nBest Regards\r\nMrs Aisha Al-Gaddafi\r\n\r\n";
+                    content = "Dear Friend,\r\n\r\nI came across your e-mail contact prior a private search while in need of your assistance. My name is Aisha  Al-Gaddafi a single Mother and a Widow with three Children. I am the only biological Daughter of late Libyan President (Late Colonel Muammar Gaddafi).\r\n\r\nI have investment funds worth Twenty Seven Million Five Hundred Thousand United State Dollar ($27.500.000.00 ) and i need a trusted investment Manager/Partner because of my current refugee status, however, I am interested in you for investment project assistance in your country,\r\n\r\n\r\nYour Urgent Reply Will Be Appreciated. contact me at this email  address (aishaelgaddafi@hotmail.com) for further discussion.\r\n\r\nBest Regards\r\nMrs Aisha Al-Gaddafi\r\n\r\n";
                     answer = "Accept the deal";
                     mailType = MailType.NORMAL;
                     infected = true;
